@@ -7,10 +7,10 @@ import androidx.room.*
 interface ArtDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertAll(art: Art)
+    suspend fun insertArt(art: Art)
 
     @Delete
-    suspend fun deleteAll(art: Art)
+    suspend fun deleteArt(art: Art)
 
     @Query("SELECT * FROM arts")
     fun observeArts(): LiveData<List<Art>>
